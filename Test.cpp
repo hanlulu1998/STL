@@ -236,12 +236,22 @@ void test10() {
 
 void test11() {
     SearchTree<int> m;
-    Element<int> a(5), b(3), c(11), d(7), e(15), f(2), g(8), h(22), i(20), j, k, l;
+    Element<int> a(5), b(3), c(11), d(3), e(15), f(2), g(8), h(22), i(20), j(9), k, l;
     cout << m.Insert(a) << endl;
-
-
     cout << m.Insert(b) << endl;
+    cout << m.Insert(c) << endl;
+    cout << m.Insert(d) << endl;
+    cout << m.Insert(e) << endl;
+    cout << m.Insert(f) << endl;
+    cout << m.Insert(g) << endl;
+    cout << m.Insert(h) << endl;
     m.display();
+    SearchNode<int> *p;
+    p = m.Search(f);
+    cout << p->data.key << endl;
+    SearchNode<int> *q;
+    q = m.Search(e);
+    cout << q->data.key << endl;
 }
 
 int main() {
