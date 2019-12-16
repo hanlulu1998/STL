@@ -246,14 +246,18 @@ void test11() {
     cout << m.Insert(g) << endl;
     cout << m.Insert(h) << endl;
     m.display();
+    m.LevelOrder(m.root);
     SearchNode<int> *p;
     p = m.Search(f);
     cout << p->data.key << endl;
-    SearchNode<int> *q;
-    q = m.Search(e);
-    cout << q->data.key << endl;
+    p= m.Delete(c);
+    cout << p->data.key << endl;
+    p=m.Delete(f);
+    cout << p->data.key << endl;
+    p=m.Delete(h);
+    cout << p->data.key << endl;
+    m.display();
 }
-
 int main() {
     test11();
     return 0;
