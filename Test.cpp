@@ -12,6 +12,7 @@
 #include "LinkedQueue.hpp"
 #include "BinaryTree.hpp"
 #include "SearchTree.hpp"
+#include "RedBlackTree.hpp"
 #include <string>
 
 using namespace std;
@@ -250,15 +251,21 @@ void test11() {
     SearchNode<int> *p;
     p = m.Search(f);
     cout << p->data.key << endl;
-    p= m.Delete(c);
+    p = m.Delete(c);
     cout << p->data.key << endl;
-    p=m.Delete(f);
+    p = m.Delete(f);
     cout << p->data.key << endl;
-    p=m.Delete(h);
+    p = m.Delete(h);
     cout << p->data.key << endl;
     m.display();
 }
+
+void test12() {
+    const int NEG_INF = -999999;
+    RedBlackTree<int> t(NEG_INF);
+}
+
 int main() {
-    test11();
+    test12();
     return 0;
 }
