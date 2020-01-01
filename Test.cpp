@@ -261,8 +261,41 @@ void test11() {
 }
 
 void test12() {
-    const int NEG_INF = -999999;
-    RedBlackTree<int> t(NEG_INF);
+    const int NEG_INF = -9999;
+//    RedBlackTree<int> t(NEG_INF);
+//    t.Insert(30);
+//    t.Insert(15);
+//    t.Insert(70);
+//    t.Insert(20);
+//    cout << t.header->right->data << endl;
+//    cout << t.header->right->left->data << endl;
+//    cout << t.header->right->right->data << endl;
+//    cout << t.header->right->left->right->data << endl;
+//    t.RightRotate(t.header->right);
+//    cout << t.header->right->data << endl;
+//    cout << t.header->right->right->data << endl;
+//    cout << t.header->right->right->left->data << endl;
+//    cout << t.header->right->right->right->data << endl;
+//    RedBlackTree<int> m(NEG_INF);
+//    m.Insert(12);
+//    m.Insert(16);
+//    m.Insert(8);
+//    m.Insert(10);
+//    m.Insert(4);
+//    m.Insert(14);
+//    m.Insert(2);
+//    m.Insert(6);
+//    m.Insert(5);
+//    cout << m.header->right->data << endl;
+//    cout << m.header->right->left->data << endl;
+//    m.DoubleRightRotate(m.header->right->left);
+//    cout << m.header->right->left->data << endl;
+    RedBlackTree<int> q(NEG_INF);
+    q.Insert(50);
+    q.Insert(40);
+    q.Insert(30);
+    cout << q.header->right->data << endl;
+
 }
 
 int main() {
