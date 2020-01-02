@@ -46,4 +46,12 @@ private:
 
 };
 
+class NullPointerException : public DSException {
+public:
+    NullPointerException(const string &msg = "") : DSException(msg) {
+
+    }
+
+};
+
 #endif //DB_EXCEPTIONS_HPP
