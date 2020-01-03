@@ -13,6 +13,7 @@
 #include "BinaryTree.hpp"
 #include "SearchTree.hpp"
 #include "RedBlackTree.hpp"
+#include "Heap.hpp"
 #include <string>
 
 using namespace std;
@@ -272,14 +273,25 @@ void test12() {
     q.Insert(80);
     if (q.FinMin().Get() == 50)
         cout << "OK" << endl;
-     if (q.FinMax().Get() == 200)
+    if (q.FinMax().Get() == 200)
         cout << "OK" << endl;
 
     cout << q.header->right->data << endl;
 
 }
 
+void test13() {
+    MaxiumHeap<int> a(20);
+    a.Push(99);
+    a.Push(93);
+    a.Push(100);
+    a.Push(4);
+    a.Push(7);
+    cout << a.Top() << endl;
+
+}
+
 int main() {
-    test12();
+    test13();
     return 0;
 }
