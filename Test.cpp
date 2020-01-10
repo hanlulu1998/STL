@@ -14,6 +14,7 @@
 #include "SearchTree.hpp"
 #include "RedBlackTree.hpp"
 #include "Heap.hpp"
+#include "HashMap.hpp"
 #include <string>
 
 using namespace std;
@@ -288,10 +289,19 @@ void test13() {
     a.Push(4);
     a.Push(7);
     cout << a.Top() << endl;
+}
+
+void test14() {
+    HashMap<string, int> m;
+//    m.Put("HanLulu",111);
+//    m.Put("HanTuo",222);
+    m.Put("XiXi",333);
+    cout<<m.Get("XiXi")<<endl;
+
 
 }
 
 int main() {
-    test13();
+    test14();
     return 0;
 }
