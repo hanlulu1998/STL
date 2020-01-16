@@ -16,6 +16,8 @@
 #include "Heap.hpp"
 #include "HashMap.hpp"
 #include <string>
+#include "MatGraph.hpp"
+#include "ListGraph.hpp"
 
 using namespace std;
 
@@ -293,12 +295,58 @@ void test13() {
 
 void test14() {
     HashMap<string, int> m;
-//    m.Put("HanLulu",111);
-//    m.Put("HanTuo",222);
-    m.Put("XiXi",333);
-    cout<<m.Get("XiXi")<<endl;
+    m.Put("HanLulu", 111);
+    m.Put("HanTuo", 222);
+    cout << m.Get("HanLulu") << endl;
+    cout << m.Get("HanTuo") << endl;
+}
 
+void test15() {
+    MatGraph<char> g;
+    g.AddVertex('A');//0
+    g.AddVertex('B');//1
+    g.AddVertex('C');//2
+    g.AddVertex('D');//3
+    g.AddVertex('E');//4
+    g.AddEdge(0, 1);
+    g.AddEdge(0, 3);
+    g.AddEdge(1, 0);
+    g.AddEdge(1, 4);
+    g.AddEdge(2, 4);
+    g.AddEdge(3, 0);
+    g.AddEdge(3, 4);
+    g.AddEdge(4, 1);
+    g.AddEdge(4, 2);
+    g.AddEdge(4, 3);
+    g.PrintMat();
+    g.DFS();
+    g.BFS();
+}
 
+void test16() {
+    ListGraph<char> l(5);
+    char a = 'A';
+    char b = 'B';
+    char c = 'C';
+    char d = 'D';
+    char e = 'E';
+    l.AddVertex(&a);
+    l.AddVertex(&b);
+    l.AddVertex(&c);
+    l.AddVertex(&d);
+    l.AddVertex(&e);
+    l.PrintVertex();
+    l.AddEdge(0, 1);
+    l.AddEdge(0, 3);
+    l.AddEdge(1, 0);
+    l.AddEdge(1, 4);
+    l.AddEdge(2, 4);
+    l.AddEdge(3, 0);
+    l.AddEdge(3, 4);
+    l.AddEdge(4, 1);
+    l.AddEdge(4, 2);
+    l.AddEdge(4, 3);
+    l.PrintList();
 }
 
 int main() {

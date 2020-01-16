@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <vector>
+#include <string>
 
 template<class Key, class Vaule>
 class HashMap {
@@ -30,16 +31,18 @@ public:
             return Vaule();
     }
 
-    unsigned Hash(const Key &k) const {
-        unsigned int HashVal = 0;
-        const char *keyp = reinterpret_cast<const char *>(&k);
-        for (size_t i = 0; i < sizeof(Key); ++i) {
-            HashVal = 37 * HashVal + keyp[i];
+    unsigned int Hash(const Key &value) {
+        unsigned int hash = 0;
+        unsigned int h = hash;     //缓存以前的hash计算结果
+        if (h == 0 && value.length() > 0) {         //value是要计算hash值的字符串
+            string val = value;
+            for (int i = 0; i < value.length(); i++) {
+                h = 31 * h + val[i];
+            }
+            hash = h;
         }
-        HashVal %= arr.size();
-        return HashVal;
+        return h%100;
     }
-
 
 private:
     struct Data {
